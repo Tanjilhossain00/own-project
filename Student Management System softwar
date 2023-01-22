@@ -1,3 +1,4 @@
+import tkinter.messagebox
 from tkinter import *
 from datetime import date
 from tkinter import filedialog
@@ -286,9 +287,20 @@ def search():
 
 
 
+
+
+
+
+
+
+
 ### exit window
 def Exit():
-    root.destroy()
+    ans=messagebox.askyesno(title='Exit',message='Do You Want To Exit ?')
+    if ans:
+        root.destroy()
+
+root.protocol("WM_DELETE_WINDOW",Exit)
 
 
 #top lebel
@@ -439,6 +451,9 @@ reset_button.place(x=1000,y=475)
 exit_button=Button(root,text='Exit',width=17,height=2,font='Arial 12 bold',
                    bg='lightgrey',cursor='hand2',command=lambda :Exit())
 exit_button.place(x=1000,y=545)
+
+
+
 
 
 
